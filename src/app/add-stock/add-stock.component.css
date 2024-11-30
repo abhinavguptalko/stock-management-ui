@@ -82,4 +82,36 @@
   p a:hover {
     text-decoration: underline;
   }
+
+  /* src/app/add-stock/add-stock.component.css */
+.add-stock-container {
+  padding: 20px;
+}
+
+form {
+  margin-bottom: 20px; /* Adds spacing between the form and the button */
+}
+
+.return-dashboard {
+  margin-top: 20px; /* Adds spacing between the form and the "Return to Dashboard" button */
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:focus {
+  outline: none;
+}
+
   
