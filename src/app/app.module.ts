@@ -10,7 +10,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddStockComponent } from './add-stock/add-stock.component';
 import { PortfolioComponent } from './portfolio/portfolio.component'; 
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StockHistoryComponent } from './stock-history/stock-history.component'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RegisterComponent,
     DashboardComponent,
     AddStockComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    StockHistoryComponent
   ],
   imports: [
     BrowserModule,

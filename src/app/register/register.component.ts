@@ -34,7 +34,8 @@ export class RegisterComponent {
       },
       (error) => {
         console.error(error);
-        this.openSnackBar('Registration failed. Please try again.', 'Close', 'error');
+        const errorMessage = error?.error?.detail || 'Registration failed. Please try again.';
+        this.openSnackBar(errorMessage, 'Close', 'error');
       }
     );
   }

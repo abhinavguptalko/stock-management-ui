@@ -101,5 +101,25 @@
     .portfolio-value p {
       font-size: 22px;
     }
+
+    .return-dashboard {
+      margin: 10px 0;
+    }
+    
+    .btn-back-to-dashboard {
+      background-color: #4caf50; /* Green */
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none; /* For routerLink button */
+    }
+    
+    .btn-back-to-dashboard:hover {
+      background-color: #45a049;
+    }
+    
   }
   

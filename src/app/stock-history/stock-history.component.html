@@ -1,0 +1,35 @@
+<!-- src/app/stock-history/stock-history.component.html -->
+<div class="stock-history-container">
+    <h2>Stock History</h2>
+  
+    <!-- Display a loading spinner while fetching data -->
+    <div *ngIf="loading" class="loading-spinner">
+      <span>Loading...</span>
+    </div>
+  
+    <!-- Display stock history if data is fetched -->
+    <table *ngIf="!loading && stockHistory.length > 0" class="stock-history-table">
+      <thead>
+        <tr>
+          <th>Symbol</th>
+          <th>Purchase Date</th>
+          <th>Quantity Changed</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let history of stockHistory">
+          <td>{{ history.symbol }}</td>
+          <td>{{ history.purchaseDate | date:'shortDate' }}</td>
+          <td>{{ history.quantityChanged }}</td>
+          <td>{{ history.action }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- If no data is available -->
+    <div *ngIf="!loading && stockHistory.length === 0">
+      <p>No stock history found</p>
+    </div>
+  </div>
+  

@@ -1,6 +1,8 @@
 <div class="portfolio-container">
     <h2>Your Portfolio</h2>
-  
+    <div class="return-dashboard">
+      <button routerLink="/dashboard" class="btn-back-to-dashboard">Return to Dashboard</button>
+    </div>
     <div *ngIf="portfolio.length > 0; else noStocks">
       <table>
         <thead>
@@ -19,9 +21,12 @@
             <td>{{ stock.price | currency }}</td>
             <td>{{ stock.totalPrice | currency }}</td>
             <td>
-              <button (click)="removeStock(stock.symbol)" class="btn-remove">
-                Remove
-              </button>
+              <button
+              (click)="removeStock(stock.symbol, stock.quantity)"
+              class="btn-remove"
+            >
+              Remove {{ stock.quantity }} of {{ stock.symbol }}
+            </button>
             </td>
           </tr>
         </tbody>

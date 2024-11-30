@@ -21,7 +21,8 @@ export class LoginComponent {
         this.router.navigate(['/dashboard']); // Navigate to dashboard upon success
       },
       (error) => {
-        this.openSnackBar('Login failed. Please try again.', 'Close', 'error');
+        const errorMessage = error?.error?.detail || 'Login failed. Please try again.';
+        this.openSnackBar(errorMessage, 'Close', 'error');
       }
     );
   }

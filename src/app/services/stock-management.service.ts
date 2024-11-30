@@ -21,9 +21,13 @@ export class StockManagementService {
     return this.http.get(`${this.baseUrl}/${userId}/stocks`);
   }
 
-  removeStock(symbol: string): Observable<any> {
+  removeStock(stockSymbol: string, quantity: number): Observable<void> {
+    const stockDTO = {
+      symbol: stockSymbol,
+      quantity: quantity,
+    };
     const userId = localStorage.getItem('userId');
-    return this.http.delete(`${this.baseUrl}/${userId}/stocks/${symbol}`);
+    return this.http.put<void>(`${this.baseUrl}/${userId}/stocks/removeStock`, stockDTO);
   }
 
   getPortfolioValue(): Observable<number> {

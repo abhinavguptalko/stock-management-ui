@@ -32,7 +32,8 @@ export class AddStockComponent {
       },
       (error) => {
         console.error(error);
-        this.openSnackBar('Stock Addition Failed Please try again.', 'Close', 'error');
+        const errorMessage = error?.error?.detail || 'Stock Addition Failed Please try again.';
+        this.openSnackBar(errorMessage, 'Close', 'error');
       }
     );
   }
