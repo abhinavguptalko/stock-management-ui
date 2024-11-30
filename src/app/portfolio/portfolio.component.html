@@ -1,0 +1,39 @@
+<div class="portfolio-container">
+    <h2>Your Portfolio</h2>
+  
+    <div *ngIf="portfolio.length > 0; else noStocks">
+      <table>
+        <thead>
+          <tr>
+            <th>Stock Symbol</th>
+            <th>Quantity</th>
+            <th>Current Price</th>
+            <th>Total Value</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let stock of portfolio">
+            <td>{{ stock.symbol }}</td>
+            <td>{{ stock.quantity }}</td>
+            <td>{{ stock.price | currency }}</td>
+            <td>{{ stock.totalPrice | currency }}</td>
+            <td>
+              <button (click)="removeStock(stock.symbol)" class="btn-remove">
+                Remove
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="portfolio-value">
+        <h3>Total Portfolio Value:</h3>
+        <p>${{ portfolioValue }}</p>
+      </div>
+    </div>
+  
+    <ng-template #noStocks>
+      <p>No stocks in your portfolio yet.</p>
+    </ng-template>
+  </div>
+  

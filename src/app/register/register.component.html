@@ -1,0 +1,58 @@
+<div class="register-container">
+    <h2>Register</h2>
+    <form (ngSubmit)="register()" #registerForm="ngForm">
+      <div>
+        <label for="userId">User ID:</label>
+        <input
+          type="text"
+          id="userId"
+          [(ngModel)]="userId"
+          name="userId"
+          required
+          #userIdField="ngModel"
+          pattern="^[a-zA-Z0-9]*$"
+          placeholder="Enter alphanumeric User ID"
+        />
+        <div *ngIf="userIdField.invalid && userIdField.touched" class="error">
+          <small>User ID must be alphanumeric.</small>
+        </div>
+      </div>
+  
+      <div>
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          [(ngModel)]="email"
+          name="email"
+          required
+          #emailField="ngModel"
+          email
+          placeholder="Enter your email"
+        />
+        <div *ngIf="emailField.invalid && emailField.touched" class="error">
+          <small>Please enter a valid email address.</small>
+        </div>
+      </div>
+  
+      <div>
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          [(ngModel)]="password"
+          name="password"
+          required
+          #passwordField="ngModel"
+          pattern="^[a-zA-Z0-9]*$"
+          placeholder="Enter alphanumeric password"
+        />
+        <div *ngIf="passwordField.invalid && passwordField.touched" class="error">
+          <small>Password must be alphanumeric.</small>
+        </div>
+      </div>
+  
+      <button type="submit" [disabled]="registerForm.invalid">Register</button>
+    </form>
+  </div>
+  
