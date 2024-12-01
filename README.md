@@ -163,8 +163,8 @@ src/
 ## APIs Consumed
 
 1. **User APIs**
-   - `POST /users/register`: Register a new user.
-   - `POST /users/login`: Authenticate user and return a session.
+   - `POST api/users/addUser`: Register a new user.
+   - `POST api/users/login`: Authenticate user and return a session.
 
 2. **Stock APIs**
    - `POST api/users/{userId}/stocks`: Add a stock.
