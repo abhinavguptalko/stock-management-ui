@@ -1,4 +1,4 @@
-Here's an updated version of your `README.md` with enhancements for the **Stock History** feature:
+Here's the updated version of the `README.md` with the addition of the **Stock History** service and the separation of the Stock History feature into its own section:
 
 ---
 
@@ -57,7 +57,7 @@ This is the **Stock Management UI**, an Angular-based web application that helps
 ## Technical Stack
 
 ### Frontend
-- **Framework**: [Angular](https://angular.io/) 15+
+- **Framework**: [Angular](https://angular.io/) 13+
 - **UI Components**: [Angular Material](https://material.angular.io/)
 - **Styling**: CSS3 with responsive design.
 
@@ -75,7 +75,7 @@ This is the **Stock Management UI**, an Angular-based web application that helps
 ### Steps
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your-username/stock-management-ui.git
+   git clone https://github.com/abhinavguptalko/stock-management-ui.git
    cd stock-management-ui
    ```
 
@@ -133,11 +133,12 @@ src/
 │   │   ├── add-stock/
 │   │   ├── login/
 │   │   ├── portfolio/
-│   │   ├── stock-history/
+│   │   ├── stock-history/         # Stock History Component for viewing stock transaction history
 │   │   └── register/
 │   ├── services/
 │   │   ├── auth.service.ts
-│   │   └── stock-management.service.ts
+│   │   ├── stock-management.service.ts
+│   │   └── stock-history.service.ts  # Service for fetching stock history
 │   ├── app.component.ts
 │   └── app.module.ts
 ├── assets/
@@ -174,6 +175,17 @@ src/
    - `PUT api/users/{userId}/stocks/removeStock`: Remove stock quantity.
    - `GET api/users/{userId}/stocks`: Fetch user's active stocks.
    - `GET api/users/{userId}/stocks/portfolio/value`: Get total portfolio value.
-   - `GET api/stocks-history/{userId}`: Fetch the stock history for the user, showing details such as quantity changes and actions (added or removed).
+
+3. **Stock History API**
+   - `GET api/stocks-history/{userId}`: Fetch the stock history for the user, showing details such as quantity changes, symbols, purchase date, and actions (added or removed).
 
 ---
+
+## Stock History Service
+
+The **Stock History** service is designed to allow users to view all their stock transaction history, including additions and removals. This service tracks:
+
+- **Stock Symbol**: The symbol of the stock.
+- **Action**: Whether the stock was added or removed.
+- **Quantity**: The number of stocks added or removed.
+- **Date**: The date the action occurred.
