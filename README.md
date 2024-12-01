@@ -1,3 +1,7 @@
+Here's an updated version of your `README.md` with enhancements for the **Stock History** feature:
+
+---
+
 # Stock Management UI
 
 This is the **Stock Management UI**, an Angular-based web application that helps users manage their stock portfolio. The application enables users to view, add, remove, and track the performance of their stocks in real-time.
@@ -33,16 +37,20 @@ This is the **Stock Management UI**, an Angular-based web application that helps
 5. **Remove Stock**:
    - Remove specific quantities of stocks from the portfolio.
    - If the quantity reaches zero, the stock is marked as expired.
-6. **Error Handling**:
+6. **View Stock History**: 
+   - Track changes to the stock portfolio with details like symbol, purchase date, quantity changed, and action (added or removed).
+   - Provides users with a historical overview of their stock transactions.
+7. **Error Handling**:
    - Display meaningful error messages from the backend (e.g., "No active stocks found").
-7. **Navigation**:
-   - Links to navigate between the dashboard, portfolio, and other components.
+8. **Navigation**:
+   - Links to navigate between the dashboard, portfolio, stock history, and other components.
 
 ### Technical Features
 1. **Responsive UI**: Optimized for desktop and mobile devices.
 2. **SnackBar Notifications**: Feedback for success and error events.
 3. **CORS Handling**: Proper backend integration to avoid CORS issues.
 4. **Dynamic Portfolio Updates**: Portfolio and value update dynamically after stock modifications.
+5. **Stock History Tracking**: Users can view a history of stock changes, including additions and removals, on their dashboard.
 
 ---
 
@@ -52,6 +60,7 @@ This is the **Stock Management UI**, an Angular-based web application that helps
 - **Framework**: [Angular](https://angular.io/) 15+
 - **UI Components**: [Angular Material](https://material.angular.io/)
 - **Styling**: CSS3 with responsive design.
+
 ---
 
 ## Setup Instructions
@@ -124,6 +133,7 @@ src/
 │   │   ├── add-stock/
 │   │   ├── login/
 │   │   ├── portfolio/
+│   │   ├── stock-history/
 │   │   └── register/
 │   ├── services/
 │   │   ├── auth.service.ts
@@ -142,14 +152,14 @@ src/
 ## Usage
 
 ### Available Routes
-| Route             | Component         | Description                         |
-|--------------------|-------------------|-------------------------------------|
-| `/register`        | RegisterComponent | User registration page              |
-| `/login`           | LoginComponent    | Login page                          |
-| `/dashboard`       | DashboardComponent| Main user dashboard                 |
-| `/portfolio`       | PortfolioComponent| Portfolio management and actions    |
-| `/add-stock`       | AddStockComponent | Add a new stock to the portfolio    |
-
+| Route             | Component              | Description                               |
+|-------------------|------------------------|-------------------------------------------|
+| `/register`       | RegisterComponent      | User registration page                    |
+| `/login`          | LoginComponent         | Login page                                |
+| `/dashboard`      | DashboardComponent     | Main user dashboard                       |
+| `/portfolio`      | PortfolioComponent     | Portfolio management and actions          |
+| `/add-stock`      | AddStockComponent      | Add a new stock to the portfolio          |
+| `/stock-history`  | StockHistoryComponent  | View the history of stock additions and removals |
 
 ---
 
@@ -160,7 +170,10 @@ src/
    - `POST /users/login`: Authenticate user and return a session.
 
 2. **Stock APIs**
-   - `POST /users/{userId}/stocks`: Add a stock.
-   - `PUT /users/{userId}/stocks/removeStock`: Remove stock quantity.
-   - `GET /users/{userId}/stocks`: Fetch user's active stocks.
-   - `GET /users/{userId}/stocks/portfolio/value`: Get total portfolio value.
+   - `POST api/users/{userId}/stocks`: Add a stock.
+   - `PUT api/users/{userId}/stocks/removeStock`: Remove stock quantity.
+   - `GET api/users/{userId}/stocks`: Fetch user's active stocks.
+   - `GET api/users/{userId}/stocks/portfolio/value`: Get total portfolio value.
+   - `GET api/stocks-history/{userId}`: Fetch the stock history for the user, showing details such as quantity changes and actions (added or removed).
+
+---
