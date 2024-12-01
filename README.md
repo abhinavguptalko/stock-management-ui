@@ -1,7 +1,3 @@
-Here's the updated version of the `README.md` with the addition of the **Stock History** service and the separation of the Stock History feature into its own section:
-
----
-
 # Stock Management UI
 
 This is the **Stock Management UI**, an Angular-based web application that helps users manage their stock portfolio. The application enables users to view, add, remove, and track the performance of their stocks in real-time.
